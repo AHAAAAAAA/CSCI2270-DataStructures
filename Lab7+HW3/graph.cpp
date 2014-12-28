@@ -85,9 +85,7 @@ bool graph::does_dfs_path_exist(const string& city1, const string& city2)
 	visited[v]=true;
 	yet_to_explore.push_back(v);
 	
-	// the rest of the code you can just use
-	// launch the depth first search
-	// if it succeeds, we say that it worked
+	//testing DFS
 	cout << "DEPTH FIRST" << endl;
 	if (depth_first_search(u, visited, yet_to_explore, path))
 	{
@@ -138,9 +136,8 @@ bool graph::does_bfs_path_exist(const string& city1, const string& city2)
 	}
 	visited[v]=true;
 	yet_to_explore.push_front(v);
-	// the rest of the code you can just use
-	// launch the breadth first search
-	// if it succeeds, we say that it worked
+
+	// test BFS
 	cout << "BREADTH FIRST" << endl;
 	if (breadth_first_search(u, visited, yet_to_explore, path))
 	{
@@ -169,13 +166,7 @@ bool graph::does_bfs_path_exist(const string& city1, const string& city2)
 	}
 }
 
-// LOGIC: if there's still stuff on the stack,
-// we pop one vertex*, then check it to see if it's the destination
-// if yes, we are done (return true)
-// if no, we push all its unvisited neighbor vertex* on the stack
-// for each neighbor, we store a pointer to the vertex* we came from
-// and then return the result of depth first search again.
-// If the stack is empty, we give up (return false)
+
 bool graph::depth_first_search(vertex* u, map<vertex*, bool>& visited, deque<vertex *>& yet_to_explore, map<vertex*, vertex*>& path)
 {
 	if (!yet_to_explore.empty())
@@ -204,13 +195,6 @@ bool graph::depth_first_search(vertex* u, map<vertex*, bool>& visited, deque<ver
 	return false;
 }
 
-// LOGIC: if there's still stuff on the queue,
-// we pop one vertex*, then check it to see if it's the destination
-// if yes, we are done (return true)
-// if no, we push all its unvisited neighbor vertex* on the queue
-// for each neighbor, we store a pointer to the vertex* we came from
-// and then return the result of breadth first search again.
-// If the queue is empty, we give up (return false)
 bool graph::breadth_first_search(vertex* u, map<vertex*, bool>& visited, deque<vertex*>& yet_to_explore, map<vertex*, vertex*>& path)
 {
 	if (!yet_to_explore.empty())
