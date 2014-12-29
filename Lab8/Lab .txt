@@ -1,1 +1,0 @@
-We replace the address of char text[4] with the address of the function we wish to call (0x8048959) (the last value in the stack) and the cmd with the value for \0. This causes the function to run because it's invoked in the Overrun function which takes the text and cmd variables as parameters and abuses the strcpy exploit.

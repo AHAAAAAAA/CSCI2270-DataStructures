@@ -12,6 +12,7 @@ int main()
     bool prime_numbers[array_size]; // make the bool array for
     // the numbers 0 to upper limit
 
+    //flips everything to true except 0 and 1
     for (int i=0;i<array_size;i++)
     {   if (i==0||i==1)
             prime_numbers[i]=false;
@@ -21,9 +22,10 @@ int main()
 
     counter=2;
 
+    //flips everything that doesn't satisfy the prime number conditions to false
     while (counter<array_size)
     {
-        for (int j=0;j<array_size;j++)
+        for (int j=0;j<array_size;j++) //
         {
             if (j%counter==0&&j!=counter)
                 prime_numbers[j]=false;
